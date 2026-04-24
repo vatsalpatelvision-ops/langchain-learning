@@ -1,6 +1,7 @@
 from langchain_groq import ChatGroq
 from dotenv import load_dotenv
 from langchain_core.messages import SystemMessage,HumanMessage
+# from langchain_core.prompts import ChatPromptTemplate
 
 load_dotenv()
 
@@ -21,6 +22,7 @@ while True:
     # response = llm.invoke(user_input)
 
     # ! Text with roles
+    # Clear Instruction + Context + Constraint = Good Output
     response = llm.invoke([
         SystemMessage(content="You are a Strict coding teacher ! only answer quesetions related to coding"),
         HumanMessage(content=user_input)
@@ -33,3 +35,6 @@ while True:
 # print(response.response_metadata)
 # print("-"*30)
 # print(response.response_metadata)
+
+
+
